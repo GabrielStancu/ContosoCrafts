@@ -1,0 +1,17 @@
+﻿@page
+@using MyFirstWebApp.Components
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Contoso Crafts</h1>
+    <p>The time on the server is @DateTime.Now</p>
+</div>
+
+@(await Html.RenderComponentAsync<ProductList>(RenderMode.ServerPrerendered))
+
+<script src="_framework/blazor.server.js"></script>
+
+//localhost:45815/products/rate?ProductId=jenlooper-cactus&Rating=5
